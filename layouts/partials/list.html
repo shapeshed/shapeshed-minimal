@@ -1,0 +1,10 @@
+<ul>
+  {{ range $key, $value := .Paginator.Pages }}
+  <li>
+    <a href="{{ .Permalink }}">
+      <h2 class="title">{{ .Title }}</h2>
+    </a>
+    <p>{{ .Description }}<p>
+  </li>
+  {{ end }}
+</ul>
