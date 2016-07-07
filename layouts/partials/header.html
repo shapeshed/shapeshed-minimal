@@ -30,8 +30,19 @@
     <meta name="twitter:domain" value="shapeshed.com">
 
     {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+    {{ with .Params.original }}<meta rel="canonical" href="{{ . }}">{{ end }}
 
 </head>
 
 <body>
+
+  <header>
+    <nav>
+      <ul class="primary">
+        <li><a href="/">Home</a></li>
+        <li><a href="/archive/">Archive</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 

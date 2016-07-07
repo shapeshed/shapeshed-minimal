@@ -443,5 +443,50 @@ h1 {
 p.meta {
   color: #666;
   font-style: italic;
+  clear: left;
 }
 
+ul.primary {
+  float: left;
+  list-style: none;
+}
+
+
+ul.primary li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.mugshot {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+.p-paging {
+  float: left;
+  width: 100%;
+  margin-bottom: 1.42382em;
+}
+
+.p-paging ul {
+  list-style: none;
+  width: 100%;
+}
+.p-paging ul li {
+  display: inline;
+}
+
+.p-paging ul li.next {
+  float: right;
+}
+.p-paging ul li.previous {
+  float: left;
+}
+
+footer {
+  clear: both;
+}
+
+footer h2 {
+  border-bottom: 1px solid black;
+}

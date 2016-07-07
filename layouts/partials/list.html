@@ -1,6 +1,8 @@
 <ul>
-  {{ range $key, $value := .Paginator.Pages }}
+  {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+  {{ range $key, $value := $paginator.Pages }}
   <li>
+
     <a href="{{ .Permalink }}">
       <h2 class="title">{{ .Title }}</h2>
     </a>

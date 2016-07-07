@@ -1,59 +1,7 @@
 {{ partial "header.html" . }}
-<script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage":{
-      "@type":"WebPage",
-      "@id":"{{ .Site.BaseURL }}"
-    },
-    "headline": "{{ .Title }} | {{ .Site.Title }}",
-    "image": {
-      "@type": "ImageObject",
-      "url": "{{ .Site.BaseURL }}images/george-700.jpg",
-      "height": 700,
-      "width": 700
-    },
-    "copyrightYear" : "{{ .Date.Format "2006" }}",
-    "url" : "{{ .Permalink }}",
-    "datePublished": "{{ .Date.Format "2006-01-02T15:04:05JST" }}",
-    "dateModified": "{{ .Date.Format "2006-01-02T15:04:05JST" }}",
-    "author": {
-      "@type": "Person",
-      "name": "{{ .Site.Params.author }}",
-      "image": "{{ .Site.BaseURL }}images/george-400.jpg"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "{{ .Site.Copyright }}",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "{{ .Site.BaseURL }}images/george-60.jpg",
-        "height": 60,
-        "width": 60
-      }
-    },
-    "description": "{{ .Description }}",
-    "timeRequired": "{{ .ReadingTime }} minutes",
-    "wordCount": "{{ .WordCount }}",
-    "articleBody": {{ .Content | html }},
-    "keywords" : [ {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }} ]
-  }
-</script>
-<p class="date"> <time datetime="{{ .Date.Format "2006-01-02T15:04:05JST" }}" data-updated="true">{{ .Date.Format "Monday, Jan 2, 2006" }}</time></p>
 
 <h1>{{ .Title }}</h1>
-<h2 class="dropcap">{{ .Description }}</h2>
-<p class="meta">Estimate reading time: {{ .ReadingTime }} minutes </p>
-<h2 class="toc">Table of contents</h2>
-{{ .TableOfContents }}
  
 {{ .Content }}
-<h2>Tags</h2>
-<ul id="tags">
-  {{ range .Params.tags }}
-  <li><a href="/tags/{{ . | urlize }}">{{ . }}</a> </li>
-  {{ end }}
-</ul>
 
 {{ partial "footer.html" . }}
