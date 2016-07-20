@@ -1,14 +1,11 @@
 
 <footer>
 <h2>About the author</h2>
-<img src="/images/george-120.jpg" alt="Picture of George Ornbo" title="George Ornbo" class="mugshot" />
+<img width="120" height="120" src="/images/george-120.jpg" alt="Picture of George Ornbo" title="George Ornbo" class="mugshot" />
 <p>George Ornbo is co-founder and Managing Director of <a href="http://pebblecode.com" class="highlight">http://pebblecode.com</a>. </p>
 <p>He is the author of <a href="http://nodejsbook.io" class="highlight">Sams Teach Yourself Node.js in 24 Hours</a>. He can be found in most of the usual places as shapeshed including <a href="https://twitter.com/shapeshed" class="highlight" onclick="ga('send', 'event', 'Link', 'click', 'Twitter');">Twitter</a> and <a href="https://github.com/shapeshed" class="highlight">GitHub</a>.</p>
 <a href="/" class="highlight">← http://shapeshed.com</a>
 </footer>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
 {{ with .Site.Params.GoogleAnalytics }}
 <script>
@@ -18,6 +15,17 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', '{{ . }}', 'auto');
 ga('send', 'pageview');
+</script>
+<script>
+  var cb = function() {
+    var l = document.createElement('link'); l.rel = 'stylesheet';
+    l.href = '/css/styles.css';
+    var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+    webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(cb);
+    else window.addEventListener('load', cb);
 </script>
 {{ end }}
 

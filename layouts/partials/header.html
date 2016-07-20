@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/{{ with .Site.Params.SyntaxHighlightTheme }}{{ . }}{{ else  }}solarized_dark.min.css{{ end }}">
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/{{ with .Site.Params.SyntaxHighlightTheme }}{{ . }}{{ else  }}solarized_dark.min.css{{ end }}">-->
+    <!--<link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.css">-->
+    <!--<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>-->
+    <style>
+      body,h1,h2,h3,h4,h5,h6,html,li,nav,p,ul{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}nav{display:block}.p-paging ul li,ul.primary li{display:inline}html{border-top:6px solid #000}body{font:75%/1.5em Georgia,serif;max-width:40.49984em;color:#000;margin:0 auto;padding:1em}h1,h2,h3,h4,h5,h6{margin-bottom:1.42382em;font-weight:400}dl,ol,p,ul{margin-bottom:1.5em}ol,ul{margin-left:1.5em}ul{list-style-type:circle}ol{list-style-type:lower-roman}h1{margin:1em 0 .46981em;font:italic 2em/1.125em "Hoefler Text",Baskerville,"PT Serif",Times,"Times New Roman",serif;line-height:1.125em;font-size:2em}h2{line-height:1.77777em;margin-bottom:1em;font-size:1.2em}a{border-bottom:1px solid #c8c8c8;text-decoration:none;color:#505050}ul.primary{margin-left:0;float:left;list-style:none}ul.primary li{margin-right:20px}@media screen and (min-width:15.652em){body{font-size:87.5%}}@media screen and (min-width:19.9375em){body{font-size:100%;padding:1.5em}h1{font-size:3em}}@media screen and (min-width:29.9375em){body{padding:1.5em 3em;max-width:34.3em}ol,ul{margin-left:0}}@media screen and (min-width:38em){body{padding:4.5em 3em 7.59372em}h1{font-size:4em}}.p-paging{float:left;width:100%;margin-bottom:1.42382em}.p-paging ul{list-style:none;width:100%}.p-paging ul li.next{float:right}.p-paging ul li.previous{float:left}.date {color: #999;float: left;clear:both;width:100%}
+    </style>
     <link href="{{ .Site.BaseURL }}atom.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 
     {{ if eq .URL "/" }}
@@ -13,24 +16,24 @@
     <meta property='og:title' content="{{ .Title }}">
     <meta property="og:type" content="website">
     {{ else }}
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
     <meta property='og:title' content="{{ .Title }} | {{ .Site.Title }}">
     <meta property="og:type" content="article">
     {{ end }}
     {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL }}images/{{ . }}">{{ end }}
     <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:site_name" value="{{ .Site.Title }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
     
 
     <meta name="author" content="George Ornbo">
-    <meta name="twitter:card" value="summary">
-    <meta name="twitter:title" value="{{ .Title }} | {{ .Site.Title }}">
-    <meta name="twitter:site" value="@shapeshed">
-    <meta name="twitter:creator" value="@shapeshed">
-    <meta name="twitter:domain" value="shapeshed.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
+    <meta name="twitter:site" content="@shapeshed">
+    <meta name="twitter:creator" content="@shapeshed">
+    <meta name="twitter:domain" content="shapeshed.com">
 
-    {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
-    {{ with .Params.original }}<meta rel="canonical" href="{{ . }}">{{ end }}
+    <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    {{ with .Params.original }}<link rel="canonical" href="{{ . }}">{{ end }}
 
 </head>
 

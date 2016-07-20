@@ -2,11 +2,11 @@
 <nav class="p-paging">
   <ul>
   {{ if .Paginator.HasPrev }}
-  <li class="previous"><a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}" rel="nofollow">← Prev</a></li>
+  <li class="previous"><a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">← Prev</a></li>
   {{ end }}
 
   {{ if .Paginator.HasNext }}
-  <li class="next" ><a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}" rel="nofollow">Next →</a></li>
+  <li class="next" ><a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">Next →</a></li>
   {{ end }}
   </ul>
 </nav>

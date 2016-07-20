@@ -7,7 +7,7 @@
 <ul>
 {{ range (where .Site.Pages "Type" "post") }}
   <li>
-    <time datetime="{{ .Date.Format "2006-01-02T15:04:05JST" }}" data-updated="true">{{ .Date.Format "Jan 2, 2006" }}</time>
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}" data-updated="true">{{ .Date.Format "Jan 2, 2006" }}</time>
     <a href="{{ .Permalink }}">{{ .Title }}</a>
   </li>
 {{ end }}

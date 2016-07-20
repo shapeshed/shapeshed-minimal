@@ -87,35 +87,6 @@ img, embed, object, video {
   }
 
 /*
-  SELECTIONS
---------------------------------------------- */
-
-::-moz-selection {
-  background: rgb(100,100,100);
-  color: rgb(255,255,255);
-  text-shadow: none;
-  }
-
-::selection {
-  background: rgb(100,100,100);
-  color: rgb(255,255,255);
-  text-shadow: none;
-  }
-
-::selection:window-inactive {
-  background: rgb(220,220,220);
-  color: rgb(50,50,50);
-  }
-
-img::selection {
-  background: transparent;
-  }
-
-img::-moz-selection {
-  background: transparent;
-  }
-
-/*
   BASE TYPOGRAPHY
 --------------------------------------------- */
 
@@ -136,7 +107,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   -moz-font-feature-settings: "liga=1, kern=1";
   -ms-font-feature-settings: "liga" 1, "kern" 1;
-  text-rendering: optimizeLegibility;
   margin-bottom: 1.42382em;
   font-weight: normal;
   }
@@ -202,11 +172,11 @@ ol {
 
 h1 {
   margin: 1em 0 0.46981em;
-  font: italic 2em/1.125em "Hoefler Text", Baskerville, "PT Serif", Times, "Times New Roman", serif;
+  font: italic 2em/1.125em "Hoefler Text", Baskerville, "PT Serif", Georgia, Times, "Times New Roman", serif;
   margin: .97em 0 .5em;
   line-height: 1.125em;
   font-size: 2em;
-  }
+}
 
 .ie h1 {
   font-size: 4em;
@@ -247,17 +217,41 @@ h6 {
   margin: 0 0 1.5em;
   }
 
-pre,code {
-  font: .9375em/1.26562em monospace, monospace;
+code {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+pre code {
+  font-size: .9375em;
+  line-height: 1.265662em;
+  padding: 0;
   -webkit-font-smoothing: subpixel-antialiased;
-  overflow: auto;
+  color: #333;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: block;
+  word-wrap: normal;
+  background-color: transparent;
+  border-radius: 0;
   }
 
 pre {
+  display: block;
+  padding: 0.75em;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   color: rgb(90,90,90);
   margin-bottom: 1.5em;
   line-height: 1em;
   white-space: pre;
+  overflow-x: auto;
   }
 
 img {
@@ -447,6 +441,7 @@ p.meta {
 }
 
 ul.primary {
+  margin-left: 0;
   float: left;
   list-style: none;
 }
@@ -490,3 +485,4 @@ footer {
 footer h2 {
   border-bottom: 1px solid black;
 }
+
