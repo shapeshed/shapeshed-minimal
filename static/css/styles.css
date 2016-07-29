@@ -361,7 +361,11 @@ sup a {
   .ie9 .dropcap:first-letter {
     margin: .2em .45em 0 0;
     line-height: .9em;
-    }
+   }
+
+   li {
+     line-height: 1.8em !important;
+   }
 
   }
 
