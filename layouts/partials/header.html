@@ -21,9 +21,15 @@
     <meta property='og:title' content="{{ .Title }} | {{ .Site.Title }}">
     <meta property="og:type" content="article">
     {{ end }}
-    {{ with .Params.image }}<meta property="og:image" content="{{ $.Site.BaseURL }}images/{{ . }}">{{ end }}
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{if .Params.image }}
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}{{.Params.image}}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{.Params.image}}">
+    {{else}}
+    <meta name="twitter:image" content="https://shapeshed.com/images/george-400.jpg">
+    <meta name="og:image" content="https://shapeshed.com/images/george-400.jpg">
+    {{end}}
     
 
     <meta name="author" content="George Ornbo">
@@ -32,6 +38,7 @@
     <meta name="twitter:site" content="@shapeshed">
     <meta name="twitter:creator" content="@shapeshed">
     <meta name="twitter:domain" content="shapeshed.com">
+    <meta name="twitter:description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
     <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     {{ with .Params.original }}<link rel="canonical" href="{{ . }}">{{ end }}
