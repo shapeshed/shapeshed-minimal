@@ -13,9 +13,9 @@
     <style>
       body,h1,h2,h3,h4,h5,h6,html,li,nav,p,ul{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}nav{display:block}.p-paging ul li,ul.primary li{display:inline}html{border-top:6px solid #000}body{font:75%/1.5em Georgia,serif;max-width:40.49984em;color:#000;margin:0 auto;padding:1em}h1,h2,h3,h4,h5,h6{margin-bottom:1.42382em;font-weight:400}dl,ol,p,ul{margin-bottom:1.5em}ol,ul{margin-left:1.5em}ul{list-style-type:circle}ol{list-style-type:lower-roman}h1{margin:1em 0 .46981em;font:italic 2em/1.125em "Hoefler Text",Baskerville,"PT Serif",Times,"Times New Roman",serif;line-height:1.125em;font-size:2em}h2{line-height:1.77777em;margin-bottom:1em;font-size:1.2em}a{border-bottom:1px solid #c8c8c8;text-decoration:none;color:#505050}ul.primary{margin-left:0;float:left;list-style:none}ul.primary li{margin-right:20px}@media screen and (min-width:15.652em){body{font-size:87.5%}}@media screen and (min-width:19.9375em){body{font-size:100%;padding:1.5em}h1{font-size:3em}}@media screen and (min-width:29.9375em){body{padding:1.5em 3em;max-width:34.3em}ol,ul{margin-left:0}}@media screen and (min-width:38em){body{padding:4.5em 3em 7.59372em}h1{font-size:4em}}.p-paging{float:left;width:100%;margin-bottom:1.42382em}.p-paging ul{list-style:none;width:100%}.p-paging ul li.next{float:right}.p-paging ul li.previous{float:left}.date {color: #999;float: left;clear:both;width:100%}.dropcap:first-letter {font: 3.32956em/0.7em Georgia, serif;margin: .2em .15em .1em 0;float: left}p.meta {color: #666;font-style: italic;clear: left}h2.toc {border-bottom: 1px solid black}
     </style>
-    {{ if .RSSLink }}
-    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ if .Site.RSSLink }}
+    <link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .Site.RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
     {{ if eq .URL "/" }}
     <title>{{ .Title }}</title>
