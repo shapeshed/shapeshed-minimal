@@ -43,7 +43,10 @@
 <p class="date">Last updated <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05" }}" data-updated="true">{{ .Lastmod.Format "Monday, Jan 2, 2006" }}</time></p>
 
 <h1>{{ .Title }}</h1>
-<h2 class="dropcap">{{ .Description }}</h2>
+
+{{ with .Param "description" }}
+  <h2 class="dropcap">{{ . }}</h2>
+{{ end }}
 <p class="meta">Estimated reading time: {{ .ReadingTime }} minutes </p>
 <h2 class="toc">Table of contents</h2>
 {{ .TableOfContents }}
