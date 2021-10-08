@@ -44,14 +44,17 @@
 
 <h1>{{ .Title }}</h1>
 
+{{ if not (in .Params.tags "Writing") }}
 {{ with .Param "description" }}
   <h2 class="dropcap">{{ . }}</h2>
 {{ end }}
 <p class="meta">Estimated reading time: {{ .ReadingTime }} minutes </p>
 <h2 class="toc">Table of contents</h2>
 {{ .TableOfContents }}
+{{ end }}
  
 {{ .Content }}
+{{ if not (in .Params.tags "Writing") }}
 <p class=highlight>Have an update or suggestion for this article? 
 <a href="https://github.com/shapeshed/shapeshed.com/edit/master/content/{{ .File.Path }}">You can edit it here and send me a pull request.</a></p>
 
@@ -61,6 +64,7 @@
   <li><a href="/tags/{{ . | urlize }}">{{ . }}</a> </li>
   {{ end }}
 </ul>
+{{ if not (in .Params.tags "Writing") }}
 <h2>Recent Posts</h2>
 <ul>
   {{ range first 3 (where .Site.Pages "Section" "post") }}
@@ -72,4 +76,6 @@
   </li>
   {{ end }}
 </ul>
+{{ end }}
+{{ end }}
 {{ partial "footer.html" . }}
