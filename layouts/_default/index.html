@@ -4,13 +4,16 @@
 
 <ul>
 {{ range first 3 .Site.RegularPages }}
-<li>
-    <a href="{{ .Permalink }}">
-      <h2 class="title">{{ .Title }}</h2>
-    </a>
-    <p>{{ .Description }}<p>
-</li>
+  <li>
+    <h2>
+        <a href="{{ .Permalink }}">
+            {{ .Title }}
+        </a>
+    </h2>
+    {{ if .Description }}
+        <p>{{ .Description }}</p>
+    {{ end }}
+  </li>
 {{ end }}
 </ul>
-
 {{ partial "footer.html" . }}

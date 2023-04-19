@@ -67,11 +67,17 @@
 {{ if not (in .Params.tags "Writing") }}
 <h2>Recent Posts</h2>
 <ul>
-  {{ range first 3 (where .Site.Pages "Section" "post") }}
+    {{ range first 3 .Site.RegularPages }}
   <li>
-    <p><a href="{{ .Permalink }}">
+    <p>
+
+    <a href="{{ .Permalink }}">
       {{ .Title }}
-    </a><br />
+    </a>
+    <br />
+    <time datetime="{{ .Date.Format "2006-01-02T15:04:05" }}" data-updated="true">{{ .Date.Format "Jan 2, 2006" }}</time>
+
+    </br >
     {{ .Description }}<p>
   </li>
   {{ end }}
