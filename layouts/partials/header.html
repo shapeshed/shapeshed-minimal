@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
     <head>
-        {{ template "_internal/google_analytics.html" . }}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
         <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
@@ -426,6 +425,7 @@
         <meta name="twitter:description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
         <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
         {{ with .Params.original }}<link rel="canonical" href="{{ . }}">{{ end }}
+        {{ template "_internal/google_analytics.html" . }}
     </head>
     <body>
         <header>
