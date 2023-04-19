@@ -1,439 +1,439 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="msvalidate.01" content="F610E4068826B9ADAA7E61D3D80A0BD9">
-    <style>
+    <head>
+        {{ template "_internal/google_analytics.html" . }}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="msvalidate.01" content="F610E4068826B9ADAA7E61D3D80A0BD9">
+        <style>
         @font-face{
-          font-family:pt serif;
-          font-weight:400;
-          font-style:normal
+            font-family:pt serif;
+            font-weight:400;
+            font-style:normal
         }
         @font-face{
-          font-family:pt serif;
-          font-style:italic;
-          font-weight:400
+            font-family:pt serif;
+            font-style:italic;
+            font-weight:400
         }
         @font-face{
-          font-family:pt serif;
-          font-style:normal;
-          font-weight:700
+            font-family:pt serif;
+            font-style:normal;
+            font-weight:700
         }
         html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{
-          margin:0;
-          padding:0;
-          border:0;
-          font-size:100%;
-          font:inherit;
-          vertical-align:baseline
+            margin:0;
+            padding:0;
+            border:0;
+            font-size:100%;
+            font:inherit;
+            vertical-align:baseline
         }
         article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{
-          display:block
+            display:block
         }
         strong,b{
-          font-weight:700
+            font-weight:700
         }
         i,em,blockquote{
-          font-style:italic
+            font-style:italic
         }
         html,body{
-          min-height:100%
+            min-height:100%
         }
         html{
-          border-top:6px solid #000;
-          -webkit-text-size-adjust:100%;
-          -ms-text-size-adjust:100%;
-          background:#fff;
-          overflow-y:scroll
+            border-top:6px solid #000;
+            -webkit-text-size-adjust:100%;
+            -ms-text-size-adjust:100%;
+            background:#fff;
+            overflow-y:scroll
         }
         img{
-          -ms-interpolation-mode:bicubic;
-          background:0 0;
-          border:0
+            -ms-interpolation-mode:bicubic;
+            background:0 0;
+            border:0
         }
         img,embed,object,video{
-          max-width:100%;
-          height:inherit;
-          _width:100%
+            max-width:100%;
+            height:inherit;
+            _width:100%
         }
         body{
-          font:75%/1.5em ptserifcustom,Georgia,serif;
-          max-width:40.49984em;
-          color:#000;
-          margin:0 auto;
-          padding:1em
+            font:75%/1.5em ptserifcustom,Georgia,serif;
+            max-width:40.49984em;
+            color:#000;
+            margin:0 auto;
+            padding:1em
         }
         .ie body{
-          max-width:32.90612em;
-          _width:32.90612em;
+            max-width:32.90612em;
+            _width:32.90612em;
         font-size:100%
         }
         h1,h2,h3,h4,h5,h6{
-          -moz-font-feature-settings:"liga=1, kern=1";
-          -ms-font-feature-settings:"liga" 1,"kern" 1;
-          margin-bottom:1.42382em;
-          font-weight:400
+            -moz-font-feature-settings:"liga=1, kern=1";
+            -ms-font-feature-settings:"liga" 1,"kern" 1;
+            margin-bottom:1.42382em;
+            font-weight:400
         }
         p,ul,ol,dl,blockquote,.content img{
-          margin-bottom:1.5em;
-          -webkit-hyphens:auto;
-          -moz-hyphens:auto;
-          hyphens:auto
+            margin-bottom:1.5em;
+            -webkit-hyphens:auto;
+            -moz-hyphens:auto;
+            hyphens:auto
         }
         abbr{
-          text-transform:lowercase;
-          font-variant:small-caps;
-          letter-spacing:.1em;
-          cursor:help
+            text-transform:lowercase;
+            font-variant:small-caps;
+            letter-spacing:.1em;
+            cursor:help
         }
         sub,sup{
-          vertical-align:baseline;
-          position:relative;
-          font-size:65%;
-          line-height:0
+            vertical-align:baseline;
+            position:relative;
+            font-size:65%;
+            line-height:0
         }
         sub{
-          bottom:-.25em
+            bottom:-.25em
         }
         sup{
-          top:-.5em
+            top:-.5em
         }
         blockquote{
-          margin:1.5em 0 1.5em 1.80203em;
-          color:#5a5a5a;
-          position:relative
+            margin:1.5em 0 1.5em 1.80203em;
+            color:#5a5a5a;
+            position:relative
         }
         blockquote:before{
-          -webkit-font-smoothing:antialiased;
-          color:#8c8c8c;
-          font-size:3.60406em;
-          position:absolute;
-          font-style:italic;
-          content:"\201C";
-          line-height:1em;
-          left:-.6018em;
-          top:0
+            -webkit-font-smoothing:antialiased;
+            color:#8c8c8c;
+            font-size:3.60406em;
+            position:absolute;
+            font-style:italic;
+            content:"\201C";
+            line-height:1em;
+            left:-.6018em;
+            top:0
         }
         ul,ol{
-          margin-left:1.5em
+            margin-left:1.5em
         }
         ul{
-          list-style-type:circle
+            list-style-type:circle
         }
         ol{
-          list-style-type:lower-roman
+            list-style-type:lower-roman
         }
         h1{
-          margin:1em 0 .46981em;
-          font:italic 2em/1.125em hoefler text,Baskerville,pt serif,Georgia,Times,times new roman,serif;
-          margin:.97em 0 .5em;
-          line-height:1.125em;
-          font-size:2em
+            margin:1em 0 .46981em;
+            font:italic 2em/1.125em hoefler text,Baskerville,pt serif,Georgia,Times,times new roman,serif;
+            margin:.97em 0 .5em;
+            line-height:1.125em;
+            font-size:2em
         }
         .ie h1{
-          font-size:4em
+            font-size:4em
         }
         h2{
-          line-height:1.77777em;
-          margin-bottom:1em;
-          font-size:1.2em
+            line-height:1.77777em;
+            margin-bottom:1em;
+            font-size:1.2em
         }
         h2.toc{
-          border-bottom:1px solid #000
+            border-bottom:1px solid #000
         }
         h3{
-          margin:1.7em 0 .85em;
-          line-height:1.5em;
-          font-size:1.3em
+            margin:1.7em 0 .85em;
+            line-height:1.5em;
+            font-size:1.3em
         }
         h4{
-          line-height:1.12382em;
-          margin:0 0 1.3em;
-          font-size:1.2em
+            line-height:1.12382em;
+            margin:0 0 1.3em;
+            font-size:1.2em
         }
         h5{
-          text-transform:uppercase;
-          letter-spacing:2px;
-          line-height:1.5em;
-          margin:0 0 1.5em;
-          font-size:1em
+            text-transform:uppercase;
+            letter-spacing:2px;
+            line-height:1.5em;
+            margin:0 0 1.5em;
+            font-size:1em
         }
         h6{
-          font-weight:700;
-          margin:0 0 1.5em
+            font-weight:700;
+            margin:0 0 1.5em
         }
         code{
-          font-family:Menlo,Monaco,Consolas,courier new,monospace;
-          padding:2px 4px;
-          font-size:90%;
-          color:#c7254e;
-          background-color:#f9f2f4;
-          border-radius:4px
+            font-family:Menlo,Monaco,Consolas,courier new,monospace;
+            padding:2px 4px;
+            font-size:90%;
+            color:#c7254e;
+            background-color:#f9f2f4;
+            border-radius:4px
         }
         pre code{
-          font-size:.9375em;
-          line-height:1.265662em;
-          padding:0;
-          -webkit-font-smoothing:subpixel-antialiased;
-          color:#333;
-          overflow-x:auto;
-          overflow-y:hidden;
-          display:block;
-          word-wrap:normal;
-          background-color:transparent;
-          border-radius:0
+            font-size:.9375em;
+            line-height:1.265662em;
+            padding:0;
+            -webkit-font-smoothing:subpixel-antialiased;
+            color:#333;
+            overflow-x:auto;
+            overflow-y:hidden;
+            display:block;
+            word-wrap:normal;
+            background-color:transparent;
+            border-radius:0
         }
         pre{
-          display:block;
-          padding:.75em;
-          word-break:break-all;
-          word-wrap:break-word;
-          background-color:#f5f5f5;
-          border:1px solid #ccc;
-          border-radius:4px;
-          color:#5a5a5a;
-          margin-bottom:1.5em;
-          line-height:1em;
-          white-space:pre;
-          overflow-x:auto
+            display:block;
+            padding:.75em;
+            word-break:break-all;
+            word-wrap:break-word;
+            background-color:#f5f5f5;
+            border:1px solid #ccc;
+            border-radius:4px;
+            color:#5a5a5a;
+            margin-bottom:1.5em;
+            line-height:1em;
+            white-space:pre;
+            overflow-x:auto
         }
         img{
-          margin:.5em auto 1.5em;
-          display:block
+            margin:.5em auto 1.5em;
+            display:block
         }
         .highlight{
-          border-color:#000;
-          background:#fffccf;
-          color:#000;
-          margin-top:3em;
-          padding:0 .2em
+            border-color:#000;
+            background:#fffccf;
+            color:#000;
+            margin-top:3em;
+            padding:0 .2em
         }
         a{
-          border-bottom:1px solid #c8c8c8;
-          text-decoration:none;
-          color:#505050
+            border-bottom:1px solid #c8c8c8;
+            text-decoration:none;
+            color:#505050
         }
         a:hover{
-          border-bottom:1px solid #000;
-          background:rgba(0,0,0,0.1);
-          color:#000
+            border-bottom:1px solid #000;
+            background:rgba(0,0,0,0.1);
+            color:#000
         }
         a:active{
-          outline:none
+            outline:none
         }
         sup a{
-          text-decoration:none
+            text-decoration:none
         }
         @media print{
-          html{
-            border:0
-          }
-          a[href]:after{
-            content:" (" attr(href) ")"
-          }
-          a[href^="javascript:"]:after,a[href^="#"]:after{
-            content:""
-          }
+            html{
+                border:0
+            }
+            a[href]:after{
+                content:" (" attr(href) ")"
+            }
+            a[href^="javascript:"]:after,a[href^="#"]:after{
+                content:""
+            }
         }
         @media screen and (min-width:15.652em){
-          body{
-            font-size:87.5%
-          }
-          h2{
-            font-size:1.26562em
-          }
-          h3{
-            font-size:1.5em
-          }
-          h4{
-            font-size:1.26562em
-          }
+            body{
+                font-size:87.5%
+            }
+            h2{
+                font-size:1.26562em
+            }
+            h3{
+                font-size:1.5em
+            }
+            h4{
+                font-size:1.26562em
+            }
         }
         @media screen and (min-width:19.9375em){
-          body{
-            font-size:100%;
-            padding:1.5em
-          }
-          h1{
-            font-size:3em
-          }
-          .dropcap:first-letter{
-            font:3.32956em/.7em Georgia,serif;
-            -webkit-font-smoothing:antialiased;
-            margin:.2em .15em .1em 0;
-            float:left
-          }
-          .ie9 .dropcap:first-letter{
-            margin:.2em .45em 0 0;
-            line-height:.9em
-          }
-          li{
-            line-height:1.8em!important
-          }
+            body{
+                font-size:100%;
+                padding:1.5em
+            }
+            h1{
+                font-size:3em
+            }
+            .dropcap:first-letter{
+                font:3.32956em/.7em Georgia,serif;
+                -webkit-font-smoothing:antialiased;
+                margin:.2em .15em .1em 0;
+                float:left
+            }
+            .ie9 .dropcap:first-letter{
+                margin:.2em .45em 0 0;
+                line-height:.9em
+            }
+            li{
+                line-height:1.8em!important
+            }
         }
         @media screen and (min-width:29.9375em){
-          body{
-            padding:1.5em 3em;
-            max-width:34.3em
-          }
-          ul,ol{
-            margin-left:0
-          }
-          sup.indent{
-            margin-left:-1.5em
-          }
+            body{
+                padding:1.5em 3em;
+                max-width:34.3em
+            }
+            ul,ol{
+                margin-left:0
+            }
+            sup.indent{
+                margin-left:-1.5em
+            }
         }
         @media screen and (min-width:38em){
-          html{
-          }
-          body{
-            padding:4.5em 3em 7.59372em
-          }
-          h1{
-            margin:.97em 0 .8em;
-            font-size:4em
-          }
+            html{
+            }
+            body{
+                padding:4.5em 3em 7.59372em
+            }
+            h1{
+                margin:.97em 0 .8em;
+                font-size:4em
+            }
         }
         @media screen and (min-width:99.9375em){
-          body{
-            max-width:34.43736em;
-            line-height:1.75em;
-            font-size:112.5%
-          }
+            body{
+                max-width:34.43736em;
+                line-height:1.75em;
+                font-size:112.5%
+            }
         }
         .date{
-          color:#999;
-          float:left;
-          clear:left
+            color:#999;
+            float:left;
+            clear:left
         }
         .twitter{
-          float:right
+            float:right
         }
         h1{
-          clear:left
+            clear:left
         }
         p.meta{
-          color:#666;
-          font-style:italic;
-          clear:left
+            color:#666;
+            font-style:italic;
+            clear:left
         }
         ul.primary{
-          margin-left:0;
-          float:left;
-          list-style:none
+            margin-left:0;
+            float:left;
+            list-style:none
         }
         ul.primary li{
-          display:inline;
-          margin-right:20px
+            display:inline;
+            margin-right:20px
         }
         .mugshot{
-          float:left;
-          margin-right:20px;
-          margin-bottom:15px
+            float:left;
+            margin-right:20px;
+            margin-bottom:15px
         }
         .p-paging{
-          float:left;
-          width:100%;
-          margin-bottom:1.42382em
+            float:left;
+            width:100%;
+            margin-bottom:1.42382em
         }
         .p-paging ul{
-          list-style:none;
-          width:100%
+            list-style:none;
+            width:100%
         }
         .p-paging ul li{
-          display:inline
+            display:inline
         }
         .p-paging ul li.next{
-          float:right
+            float:right
         }
         .p-paging ul li.previous{
-          float:left
+            float:left
         }
         footer{
-          clear:both
+            clear:both
         }
         footer h2{
-          border-bottom:1px solid #000
+            border-bottom:1px solid #000
         }
         @media (prefers-color-scheme: dark) {
-          html {
-            background: #000000;
-          }
-          body {
-            color: #ffffff;
-          }
-          a {
-            border-bottom: 1px solid #ffffff;
-            color: #ffffff;
-          }
-          a:hover{
-            border-bottom: 1px solid #000;
-            background: rgba(0,0,0,0.1);
-            color: #505050;
-          }
-          code {
-            color: #f5f5f5;
-            background-color: #5a5a5a;
-          }
-          .highlight {
-            color: #ffffff;
-            background-color: #5a5a5a;
-          }
-          blockquote {
-            color: #999999;
-          }
-          pre {
-            border: none;
-            background-color: #5a5a5a;
-          }
-          pre code {
-            color: #ffffff;
-          }
+            html {
+                background: #000000;
+            }
+            body {
+                color: #ffffff;
+            }
+            a {
+                border-bottom: 1px solid #ffffff;
+                color: #ffffff;
+            }
+            a:hover{
+                border-bottom: 1px solid #000;
+                background: rgba(0,0,0,0.1);
+                color: #505050;
+            }
+            code {
+                color: #f5f5f5;
+                background-color: #5a5a5a;
+            }
+            .highlight {
+                color: #ffffff;
+                background-color: #5a5a5a;
+            }
+            blockquote {
+                color: #999999;
+            }
+            pre {
+                border: none;
+                background-color: #5a5a5a;
+            }
+            pre code {
+                color: #ffffff;
+            }
         }
-    </style> 
-    {{ if .Site.RSSLink }}
-    <link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
-    {{ if eq .RelPermalink "/" }}
-    <title>{{ .Title }}</title>
-    <meta property='og:title' content="{{ .Title }}">
-    <meta property="og:type" content="website">
-    {{ else }}
-    <title>{{ .Title }} | {{ .Site.Title }}</title>
-    <meta property='og:title' content="{{ .Title }} | {{ .Site.Title }}">
-    <meta property="og:type" content="article">
-    {{ end }}
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:site_name" content="{{ .Site.Title }}">
-    {{if .Params.image }}
-    <meta name="twitter:image" content="{{ .Site.BaseURL }}{{.Params.image}}">
-    <meta property="og:image" content="{{ .Site.BaseURL }}{{.Params.image}}">
-    {{else}}
-    <meta name="twitter:image" content="https://shapeshed.com/images/george-400.jpg">
-    <meta name="og:image" content="https://shapeshed.com/images/george-400.jpg">
-    {{end}}
-    <meta name="author" content="George Ornbo">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
-    <meta name="twitter:site" content="@shapeshed">
-    <meta name="twitter:creator" content="@shapeshed">
-    <meta name="twitter:domain" content="shapeshed.com">
-    <meta name="twitter:description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    {{ with .Params.original }}<link rel="canonical" href="{{ . }}">{{ end }}
-</head>
-<body>
-  <header>
-    <nav>
-      <ul class="primary">
-        <li><a href="/">Home</a></li>
-        <li><a href="/posts/">Posts</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
+        </style>
+        {{ if .Site.RSSLink }}
+        <link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+        {{ end }}
+        {{ if eq .RelPermalink "/" }}
+        <title>{{ .Title }}</title>
+        <meta property='og:title' content="{{ .Title }}">
+        <meta property="og:type" content="website">
+        {{ else }}
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
+        <meta property='og:title' content="{{ .Title }} | {{ .Site.Title }}">
+        <meta property="og:type" content="article">
+        {{ end }}
+        <meta property="og:url" content="{{ .Permalink }}">
+        <meta property="og:site_name" content="{{ .Site.Title }}">
+        {{if .Params.image }}
+        <meta name="twitter:image" content="{{ .Site.BaseURL }}{{.Params.image}}">
+        <meta property="og:image" content="{{ .Site.BaseURL }}{{.Params.image}}">
+        {{else}}
+        <meta name="twitter:image" content="https://shapeshed.com/images/george-400.jpg">
+        <meta name="og:image" content="https://shapeshed.com/images/george-400.jpg">
+        {{end}}
+        <meta name="author" content="George Ornbo">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ .Title }} | {{ .Site.Title }}">
+        <meta name="twitter:site" content="@shapeshed">
+        <meta name="twitter:creator" content="@shapeshed">
+        <meta name="twitter:domain" content="shapeshed.com">
+        <meta name="twitter:description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+        <meta name="description" content="{{ if ne .Description "" }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+        {{ with .Params.original }}<link rel="canonical" href="{{ . }}">{{ end }}
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul class="primary">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/posts/">Posts</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
